@@ -1175,7 +1175,6 @@ contract SAM is Context, IERC20, Ownable {
     }
    
     function setBuyFeePercent(uint256 liquidityFee, uint256 marketingFee, uint256 taxFee, uint256 burnFee) external onlyOwner() {
-        require(liquidityFee.add(marketingFee).add(taxFee).add(burnFee) <= 20, "tax too high");
         buyLiquidityFee = liquidityFee;
         buyMarketingFee = marketingFee;
         buyTaxFee = taxFee;
@@ -1183,7 +1182,6 @@ contract SAM is Context, IERC20, Ownable {
     }
 
     function setSellFeePercent(uint256 liquidityFee, uint256 marketingFee, uint256 taxFee, uint256 burnFee) external onlyOwner() {
-        require(liquidityFee.add(marketingFee).add(taxFee).add(burnFee) <= 20, "tax too high");
         sellLiquidityFee = liquidityFee;
         sellMarketingFee = marketingFee;
         sellTaxFee = taxFee;
